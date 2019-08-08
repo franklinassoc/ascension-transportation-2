@@ -11,7 +11,7 @@ $.getJSON("/data-sources/ascension-parish.geojson", function(json) {
 });
 
 $.getJSON("/data-sources/municipalities-ascension-parish.geojson", function(json) {
-    addPoints(json);
+    addPolygons(json);
 });
 
 // init() is called as soon as the page loads
@@ -32,7 +32,7 @@ function init() {
 window.addEventListener("DOMContentLoaded", init);
 
 // Create a new Leaflet map centered on Louisiana
-var map = L.map("map").setView([30.2, -90.0], 4);
+var map = L.map("map").setView([30.2, -90.0], 9);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
