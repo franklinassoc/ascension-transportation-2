@@ -10,9 +10,9 @@ $.getJSON("/ascension-transportation-2/data-sources/ascension-parish-and-municip
     addPolygons(json);
 });
 // Test with working layer from example
- $.getJSON("/ascension-transportation-2/data-sources/US-states-leaflet.json", function(json) {
-     addPolygons(json);
- });
+// $.getJSON("/ascension-transportation-2/data-sources/US-states-leaflet.json", function(json) {
+//     addPolygons(json);
+// });
 
 // init() is called as soon as the page loads
 function init() {
