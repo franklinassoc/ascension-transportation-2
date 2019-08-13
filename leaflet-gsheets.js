@@ -6,7 +6,7 @@
 */
 
 // The getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("/data-sources/ascension-parish-and-municipalities-minified.geojson", function(json) {
+$.getJSON("../data-sources/ascension-parish-and-municipalities-minified.geojson", function(json) {
     addPolygons(json);
 });
 
