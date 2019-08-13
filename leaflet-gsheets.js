@@ -6,11 +6,11 @@
 */
 
 // The getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("/ascension-transportation-2/data-sources/ascension-parish-and-municipalities-minified.geojson", function(json) {
+$.getJSON("/ascension-transportation-2/data-sources/ascension-parish-and-municipalities-minified.json", function(json) {
     addPolygons(json);
 });
 
-// $.getJSON("/data-sources/municipalities-ascension-parish.geojson", function(json) {
+// $.getJSON("/ascension-transportation-2/data-sources/municipalities-ascension-parish.geojson", function(json) {
 //     addPolygons(json);
 // });
 
