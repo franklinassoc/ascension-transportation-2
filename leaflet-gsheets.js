@@ -5,14 +5,14 @@
 * The Sheets are then imported using Tabletop.js and overwrite the initially laded layers
 */
 
-// The two getJSON calls load the localy stored JSONs and call the appropriate functions
+// The getJSON calls load the localy stored JSONs and call the appropriate functions
 $.getJSON("/data-sources/ascension-parish-and-municipalities-minified.geojson", function(json) {
     addPolygons(json);
 });
 
-$.getJSON("/data-sources/municipalities-ascension-parish.geojson", function(json) {
-    addPolygons(json);
-});
+// $.getJSON("/data-sources/municipalities-ascension-parish.geojson", function(json) {
+//     addPolygons(json);
+// });
 
 // init() is called as soon as the page loads
 function init() {
