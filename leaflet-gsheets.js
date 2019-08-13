@@ -6,7 +6,7 @@
 */
 
 // The two getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("/data-sources/ascension-parish.geojson", function(json) {
+$.getJSON("/data-sources/ascension-parish-and-municipalities-minified.geojson", function(json) {
     addPolygons(json);
 });
 
@@ -19,7 +19,7 @@ function init() {
 
 	// these URLs come from Google Sheets "shareable link" form
 	// the first is the polygon layer and the second the points
-	var polysURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
+	var polysURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=0";
 	var pointsURL = "";
 
     Tabletop.init( { key: pointsURL,
