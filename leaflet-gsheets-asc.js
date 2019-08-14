@@ -95,14 +95,14 @@ function addPolygons(data) {
 	    	geojsonPolys.features.push({
 	        	"type": "Feature",
 	        	"geometry": {
-	          		"type": "MultiPolygon",
+	          		"type": data[row].geotype,
 	          		"coordinates": coords
 	        	},
 	        	"properties": {
-	          		"name": data[row].name,
-	          		"summary": data[row].summary,
-	          		"state": data[row].state,
-	          		"local": data[row].local,
+	          		"name": data[row].Title,
+	          		"type": data[row].Type,
+	          		"contractor": data[row].Contractor,
+	          		"proj-num": data[row].file_num,
 	        	}
 	    	});
     	}
@@ -131,7 +131,7 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.file-num);
-					$('#sidebar-content').text(e.target.feature.properties.Title);
+					$('#sidebar-content').text(e.target.feature.properties.name);
 					sidebar.open(panelID);
                 }
       		});
