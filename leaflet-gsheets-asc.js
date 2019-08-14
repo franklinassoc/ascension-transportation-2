@@ -99,10 +99,10 @@ function addPolygons(data) {
 	          		"coordinates": coords
 	        	},
 	        	"properties": {
-	          		"name": data[row].Title,
+	          		"Title": data[row].Title,
 	          		"type": data[row].Type,
 	          		"contractor": data[row].Contractor,
-	          		"proj-num": data[row].file_num,
+	          		"file_num": data[row].file_num,
 	        	}
 	    	});
     	}
@@ -130,8 +130,8 @@ function addPolygons(data) {
                     // https://stackoverflow.com/questions/35466139/map-on-click-fires-when-geojson-is-clicked-on-leaflet-1-0
                     L.DomEvent.stopPropagation(e); 
 
-                	$('#sidebar-title').text(e.target.feature.properties.file-num);
-					$('#sidebar-content').text(e.target.feature.properties.name);
+                	$('#sidebar-title').text(e.target.feature.properties.file_num);
+					$('#sidebar-content').text(e.target.feature.properties.Title);
 					sidebar.open(panelID);
                 }
       		});
