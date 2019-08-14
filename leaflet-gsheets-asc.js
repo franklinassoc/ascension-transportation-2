@@ -5,34 +5,36 @@
 * The Sheets are then imported using Tabletop.js and overwrite the initially laded layers
 */
 
-// The getJSON calls load the localy stored JSONs and call the appropriate functions
-$.getJSON("/ascension-transportation-2/data-sources/ascension-parish-and-municipalities-minified.json", function(json) {
-    addPolygons(json);
-});
-// Test with working layer from example
-// $.getJSON("/ascension-transportation-2/data-sources/US-states-leaflet.json", function(json) {
+// This  getJSON call loads the localy stored polyline JSON and call the appropriate functions
+// $.getJSON("data-sources/US-states-leaflet.json", function(json) {
 //     addPolygons(json);
 // });
+// the points JSON wasn't provided in the repository, so it must be pulled from author's website
+// $.getJSON("data-sources/US-points.json", function(json) {
+//     addPoints(json);
+// });
+
 
 // init() is called as soon as the page loads
 function init() {
 
 	// these URLs come from Google Sheets "shareable link" form
 	// the first is the polygon layer and the second the points
-	var polysURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=0";
-	var pointsURL = "";
+	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
+	
+	var pointsURL = "https://docs.google.com/spreadsheets/d/1WyZNokrgj5NmbyYrRIOQDa2mZ0_SEdbjBohR2RmKXp8/edit?usp=sharing";
 
     Tabletop.init( { key: pointsURL,
                      callback: addPoints,
                      simpleSheet: true } );  // simpleSheet assumes there is only one table and automatically sends its data
-    Tabletop.init( { key: polysURL,
+    Tabletop.init( { key: linesURL,
                      callback: addPolygons,
                      simpleSheet: true } );
 }
 window.addEventListener("DOMContentLoaded", init);
 
 // Create a new Leaflet map centered on Louisiana
-var map = L.map("map").setView([30.2, -90.0], 9);
+var map = L.map("map").setView([30.2, -90.0], 4);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
@@ -80,7 +82,7 @@ function addPolygons(data) {
 	// Need to convert the Tabletop.js JSON into a GeoJSON
 	// Start with an empty GeoJSON of type FeatureCollection
 	// All the rows will be inserted into a single GeoJSON
-	var geojsonStates = {
+	var geojsonPolys = {
 	    "type": "FeatureCollection",
 	    "features": []
   	};
@@ -90,7 +92,7 @@ function addPolygons(data) {
     	if (data[row].include == "y") {
       		var coords = JSON.parse(data[row].geometry);
 
-	    	geojsonStates.features.push({
+	    	geojsonPolys.features.push({
 	        	"type": "Feature",
 	        	"geometry": {
 	          		"type": "MultiPolygon",
@@ -110,7 +112,7 @@ function addPolygons(data) {
   	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5};
 	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 3};
 	
-  	polygonLayer = L.geoJSON(geojsonStates, {
+  	polygonLayer = L.geoJSON(geojsonPolys, {
     	onEachFeature: function (feature, layer) {
       		layer.on({
       			mouseout: function(e) {
@@ -128,8 +130,8 @@ function addPolygons(data) {
                     // https://stackoverflow.com/questions/35466139/map-on-click-fires-when-geojson-is-clicked-on-leaflet-1-0
                     L.DomEvent.stopPropagation(e); 
 
-                	$('#sidebar-title').text(e.target.feature.properties.name);
-					$('#sidebar-content').text(e.target.feature.properties.summary);
+                	$('#sidebar-title').text(e.target.feature.properties.file-num);
+					$('#sidebar-content').text(e.target.feature.properties.Title);
 					sidebar.open(panelID);
                 }
       		});
@@ -163,12 +165,12 @@ function addPoints(data) {
   	}
 }
 
+// Point Marker Colors function
 // Returns different colors depending on the string passed
-// Used for the points layer
 function getColor(type) {
 	switch (type) {
 		case "Coffee Shop":
-			return "green";
+			return "red";
 		case "Restaurant":
 			return "blue";
 		default:
@@ -176,3 +178,14 @@ function getColor(type) {
 
 	}
 }
+
+// Set style for parish boundary and municipalities layer
+  	var pboundsStyle = {"color": "#273746", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
+
+// Add parish and municipal boundaries geoJSON
+  $.getJSON("./data-sources/ascension-parish-and-municipalities.geojson",function(pbounds){
+ // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(pbounds, {
+	style: pboundsStyle,
+	}).addTo(map);
+  });
