@@ -155,7 +155,8 @@ function addPoints(data) {
 
       	// AwesomeMarkers is used to create fancier icons
       	var icon = L.AwesomeMarkers.icon({
-			icon: "info-sign",
+			// icon: "info-sign",
+			icon: getIcon(data[row].Type),
 			iconColor: "white",
 			markerColor: getColor(data[row].Type),
 			prefix: "glyphicon",
@@ -180,6 +181,23 @@ function getColor(Type) {
 			return "#1ABC9C";
 		default:
 			return "black";
+	}
+}
+
+// Point Marker Icons function
+// Returns different icons depending on the string passed
+function getColor(Type) {
+	switch (Type) {
+		case "New Bridge":
+			return "star";
+		case "Roundabout":
+			return "sync-alt";
+		case "Signalization":
+			return "traffic-light";
+		case "Turn Lane":
+			return "directions";
+		default:
+			return "info-sign";
 	}
 }
 
