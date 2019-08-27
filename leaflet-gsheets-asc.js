@@ -168,16 +168,16 @@ function addPoints(data) {
 
 // Point Marker Colors function
 // Returns different colors depending on the string passed
-function getColor(type) {
-	switch (type) {
+function getColor(Type) {
+	switch (Type) {
 		case "New Bridge":
-			return "red";
+			return "#FFC300";
 		case "Roundabout":
-			return "blue";
+			return "#8E44AD";
 		case "Signalization":
-			return "crimson";
+			return "#E74C3C";
 		case "Turn Lane":
-			return "chartreuse";
+			return "#1ABC9C";
 		default:
 			return "black";
 	}
