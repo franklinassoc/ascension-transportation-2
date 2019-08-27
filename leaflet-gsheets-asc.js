@@ -131,8 +131,8 @@ function addPolygons(data) {
                     // https://stackoverflow.com/questions/35466139/map-on-click-fires-when-geojson-is-clicked-on-leaflet-1-0
                     L.DomEvent.stopPropagation(e); 
 
-                	$('#sidebar-title').text(e.target.feature.properties.file_num);
-					$('#sidebar-content').text(e.target.feature.properties.Title);
+                	$('#sidebar-title').text(e.target.feature.properties.type);
+					$('#sidebar-content').text(e.target.feature.properties.Title)"<br>".text(e.target.feature.properties.file_num);
 					sidebar.open(panelID);
                 }
       		});
