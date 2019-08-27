@@ -20,9 +20,11 @@ function init() {
 
 	// these URLs come from Google Sheets "shareable link" form
 	// the first is the polygon layer and the second the points
-	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
-	
-	var pointsURL = "https://docs.google.com/spreadsheets/d/1WyZNokrgj5NmbyYrRIOQDa2mZ0_SEdbjBohR2RmKXp8/edit?usp=sharing";
+	// var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
+	// linesURL points to "MoveAscension_projects - sheet1" where lines and points are in "geometry" field as JSON
+	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=0";
+	// pointsURL points to "MoveAscension_projects - Signalization_Airline_Hwy"
+	var pointsURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=555455661";
 
     Tabletop.init( { key: pointsURL,
                      callback: addPoints,
@@ -33,8 +35,8 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
-// Create a new Leaflet map centered on Louisiana
-var map = L.map("map").setView([30.2, -90.0], 4);
+// Create a new Leaflet map centered on Ascension Parish
+var map = L.map("map").setView([30.2, -90.0], 8);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
@@ -109,8 +111,8 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5};
-	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 3};
+  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 2};
+	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 4};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
     	onEachFeature: function (feature, layer) {
@@ -169,12 +171,20 @@ function addPoints(data) {
 // Returns different colors depending on the string passed
 function getColor(type) {
 	switch (type) {
-		case "Coffee Shop":
+		case "New Bridge":
 			return "red";
-		case "Restaurant":
+		case "Roundabout":
 			return "blue";
+		case "New Road":
+			return "cyan";
+		case "Safety Widening":
+			return "darkmagenta";
+		case "Signalization":
+			return "crimson";
+		case "Turn Lane":
+			return "chartreuse";
 		default:
-			return "green";
+			return "black";
 
 	}
 }
