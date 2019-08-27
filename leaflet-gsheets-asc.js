@@ -102,8 +102,7 @@ function addPolygons(data) {
 	        	"properties": {
 	          		"Title": data[row].Title,
 	          		"type": data[row].Type,
-	          		"contractor": data[row].Contractor,
-	          		"file_num": data[row].file_num,
+					"display-content": data[row].Title+"<br>Project No: "+data[row].file_num+"<br>Contractor: "+data[row].Contractor+"<br><br>Comments:<br>"+data[row].Comments,
 	        	}
 	    	});
     	}
@@ -131,8 +130,7 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#sidebar-content').text(e.target.feature.properties.Title);
-					$('#sidebar-content').text(e.target.feature.properties.file_num);
+					$('#sidebar-content').text(e.target.feature.properties.display-content);
 					sidebar.open(panelID);
                 }
       		});
