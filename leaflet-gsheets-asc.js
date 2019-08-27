@@ -131,7 +131,8 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#sidebar-content').text(e.target.feature.properties.Title)+"<br>"+.text(e.target.feature.properties.file_num);
+					$('#sidebar-content').text(e.target.feature.properties.Title);
+					$('#sidebar-content').text(e.target.feature.properties.file_num);
 					sidebar.open(panelID);
                 }
       		});
