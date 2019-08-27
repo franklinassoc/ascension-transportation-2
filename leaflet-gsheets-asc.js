@@ -103,7 +103,7 @@ function addPolygons(data) {
 	          		"Title": data[row].Title,
 	          		"type": data[row].Type,
 					"file_num": data[row].file_num,
-					"display-content": data[row].display-content,
+					"myinfo": data[row].myinfo,
 	        	}
 	    	});
     	}
@@ -132,7 +132,7 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#sidebar-content').text(e.target.feature.properties.display-content);
+					$('#sidebar-content').text(e.target.feature.properties.myinfo);
 					sidebar.open(panelID);
                 }
       		});
