@@ -157,7 +157,7 @@ function addPoints(data) {
       	var icon = L.AwesomeMarkers.icon({
 			icon: "info-sign",
 			iconColor: "white",
-			markerColor: getColor(data[row].category),
+			markerColor: getColor(data[row].Type),
 			prefix: "glyphicon",
 			extraClasses: "fa-rotate-0"
 		});
@@ -168,8 +168,8 @@ function addPoints(data) {
 
 // Point Marker Colors function
 // Returns different colors depending on the string passed
-function getColor(Type) {
-	switch (Type) {
+function getColor(type) {
+	switch (type) {
 		case "New Bridge":
 			return "red";
 		case "Roundabout":
