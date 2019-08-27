@@ -21,9 +21,9 @@ function init() {
 	// these URLs come from Google Sheets "shareable link" form
 	// the first is the polygon layer and the second the points
 	// linesURL points to "MoveAscension_projects - sheet1" where lines and points are in "geometry" field as JSON
-	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
+	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=0";
 	// pointsURL points to "nothing"
-	var pointsURL = "";
+	var pointsURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=1421436166";
 
     Tabletop.init( { key: pointsURL,
                      callback: addPoints,
@@ -110,7 +110,6 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-  	var poylgonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 2};
 	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 4};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
