@@ -22,9 +22,9 @@ function init() {
 	// the first is the polygon layer and the second the points
 	// var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
 	// linesURL points to "MoveAscension_projects - sheet1" where lines and points are in "geometry" field as JSON
-	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=0";
-	// pointsURL points to "MoveAscension_projects - Signalization_Airline_Hwy"
-	var pointsURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=555455661";
+	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
+	// pointsURL points to "nothing"
+	var pointsURL = "";
 
     Tabletop.init( { key: pointsURL,
                      callback: addPoints,
