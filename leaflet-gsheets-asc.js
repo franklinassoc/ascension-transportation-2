@@ -151,7 +151,7 @@ function addPoints(data) {
 
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
-      	marker.bindPopup("<h2>"+data[row].type+"</h2><br>"+data[row].title);
+      	marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title);
 
       	// AwesomeMarkers is used to create fancier icons
       	var icon = L.AwesomeMarkers.icon({
@@ -168,8 +168,8 @@ function addPoints(data) {
 
 // Point Marker Colors function
 // Returns different colors depending on the string passed
-function getColor(type) {
-	switch (type) {
+function getColor(Type) {
+	switch (Type) {
 		case "New Bridge":
 			return "red";
 		case "Roundabout":
