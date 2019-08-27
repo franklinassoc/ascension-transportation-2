@@ -102,7 +102,7 @@ function addPolygons(data) {
 	        	"properties": {
 	          		"Title": data[row].Title,
 	          		"type": data[row].Type,
-					"display-content": data[row].Title+"<br>Project No: "+data[row].file_num+"<br>Contractor: "+data[row].Contractor+"<br><br>Comments:<br>"+data[row].Comments,
+					"file_num": data[row].file_num,
 	        	}
 	    	});
     	}
