@@ -109,6 +109,7 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
+	var polygonStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 2};
 	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 4};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
