@@ -103,6 +103,7 @@ function addPolygons(data) {
 	          		"Title": data[row].Title,
 	          		"type": data[row].Type,
 					"file_num": data[row].file_num,
+					"display-content": data[row].display-content,
 	        	}
 	    	});
     	}
