@@ -109,14 +109,14 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-	var polygonStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 2};
+  	var polygonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5};
 	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 4};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
     	onEachFeature: function (feature, layer) {
       		layer.on({
       			mouseout: function(e) {
-                    e.target.setStyle(poylgonStyle);
+                    e.target.setStyle(polygonStyle);
                 },
                 mouseover: function(e) {
                     e.target.setStyle(polygonHoverStyle);
@@ -136,7 +136,7 @@ function addPolygons(data) {
                 }
       		});
     	},
-    	style: poylgonStyle
+    	style: polygonStyle
   	}).addTo(map);  	
 }
 
