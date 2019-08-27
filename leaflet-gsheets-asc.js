@@ -20,10 +20,10 @@ function init() {
 
 	// these URLs come from Google Sheets "shareable link" form
 	// the first is the polygon layer and the second the points
-	// linesURL points to "MoveAscension_projects - sheet1" where lines and points are in "geometry" field as JSON
-	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=0";
-	// pointsURL points to "nothing"
-	var pointsURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit#gid=1421436166";
+	// linesURL points to "MoveAscension_Polys" where lines are in "geometry" field as JSON
+	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
+	// pointsURL points to "MoveAscension_Points"
+	var pointsURL = "https://docs.google.com/spreadsheets/d/169Y5VHM_RvdzG6_Zaq-nBkm8WXBWOWmwt6HC41PlzAc/edit?usp=sharing";
 
     Tabletop.init( { key: pointsURL,
                      callback: addPoints,
@@ -131,7 +131,7 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#sidebar-content').text(e.target.feature.properties.Title)"<br>".text(e.target.feature.properties.file_num);
+					$('#sidebar-content').text(e.target.feature.properties.Title)+"<br>"+.text(e.target.feature.properties.file_num);
 					sidebar.open(panelID);
                 }
       		});
@@ -150,7 +150,7 @@ function addPoints(data) {
 
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
-      	marker.bindPopup("<h2>"+data[row].location+"</h2>There's a "+data[row].level+" "+data[row].category+" here");
+      	marker.bindPopup("<h2>"+data[row].type+"</h2><br>"+data[row].title);
 
       	// AwesomeMarkers is used to create fancier icons
       	var icon = L.AwesomeMarkers.icon({
@@ -173,17 +173,12 @@ function getColor(type) {
 			return "red";
 		case "Roundabout":
 			return "blue";
-		case "New Road":
-			return "cyan";
-		case "Safety Widening":
-			return "darkmagenta";
 		case "Signalization":
 			return "crimson";
 		case "Turn Lane":
 			return "chartreuse";
 		default:
 			return "black";
-
 	}
 }
 
