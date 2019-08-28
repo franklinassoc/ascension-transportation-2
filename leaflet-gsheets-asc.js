@@ -186,18 +186,18 @@ function getColor(Type) {
 
 // Point Marker Icons function
 // Returns different icons depending on the string passed
-function getColor(Type) {
+function getIcon(Type) {
 	switch (Type) {
 		case "New Bridge":
 			return "star";
 		case "Roundabout":
-			return "sync-alt";
+			return "roundabout";
 		case "Signalization":
-			return "traffic-light";
+			return "more-vertical";
 		case "Turn Lane":
-			return "directions";
+			return "chevron-right";
 		default:
-			return "info-sign";
+			return "circle-info";
 	}
 }
 
