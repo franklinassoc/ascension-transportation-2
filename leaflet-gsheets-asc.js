@@ -191,13 +191,13 @@ function getIcon(Type) {
 		case "New Bridge":
 			return "star";
 		case "Roundabout":
-			return "roundabout";
+			return "refresh";
 		case "Signalization":
-			return "more-vertical";
+			return "option-vertical";
 		case "Turn Lane":
-			return "chevron-right";
+			return "share-right";
 		default:
-			return "circle-info";
+			return "info-sign";
 	}
 }
 
