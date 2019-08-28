@@ -151,7 +151,7 @@ function addPoints(data) {
 
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
-      	marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title);
+      	marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title+"<br>"+data[row].Comments);
 
       	// AwesomeMarkers is used to create fancier icons
 		// documentation https://github.com/FortAwesome/Font-Awesome/blob/master/css/fontawesome.css
