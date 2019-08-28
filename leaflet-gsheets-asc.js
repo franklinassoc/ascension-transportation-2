@@ -160,8 +160,7 @@ function addPoints(data) {
 			iconColor: "white",
 			markerColor: (data[row].Color),
 			prefix: "",
-			extraClasses: "fa-rotate-0",
-			iconSize: [19, 47],
+			extraClasses: "fa-rotate-0 awesome-marker awesome-marker-square",
 		});
     	marker.setIcon(icon);
 
