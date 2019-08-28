@@ -159,7 +159,7 @@ function addPoints(data) {
 			icon: (data[row].Marker_Icon),
 			iconColor: "white",
 			markerColor: (data[row].Color),
-			prefix: "fa",
+			//prefix: "",
 			extraClasses: "fa-rotate-0",
 			iconSize: [38, 95], // size of the icon
 		});
