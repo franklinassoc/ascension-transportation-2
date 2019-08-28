@@ -170,8 +170,8 @@ function addPoints(data) {
 
 // Point Marker Colors function
 // Returns different colors depending on the string passed
-function getColor(Type) {
-	switch (Type) {
+function getColor(Hue) {
+	switch (Hue) {
 		case "New Bridge":
 			return "#FFC300";
 		case "Roundabout":
