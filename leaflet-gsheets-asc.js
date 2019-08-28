@@ -158,7 +158,7 @@ function addPoints(data) {
 			// icon: "info-sign",
 			icon: getIcon(data[row].Type),
 			iconColor: "white",
-			markerColor: getColor(data[row].Hue),
+			markerColor: getColor(data[row].Type),
 			// prefix: "glyphicon",
 			prefix: "fa",
 			extraClasses: "fa-rotate-0"
@@ -170,8 +170,8 @@ function addPoints(data) {
 
 // Point Marker Colors function
 // Returns different colors depending on the string passed
-function getColor(Hue) {
-	switch (Hue) {
+function getColor(Type) {
+	switch (Type) {
 		case "New Bridge":
 			return "#FFC300";
 		case "Roundabout":
