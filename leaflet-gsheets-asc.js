@@ -154,13 +154,13 @@ function addPoints(data) {
       	marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title);
 
       	// AwesomeMarkers is used to create fancier icons
+		// documentation https://github.com/FortAwesome/Font-Awesome/blob/master/css/fontawesome.css
       	var icon = L.AwesomeMarkers.icon({
-			// icon: "info-sign",
 			icon: (data[row].Marker_Icon),
 			iconColor: "white",
 			markerColor: (data[row].Color),
-			prefix: "",
-			extraClasses: "fa-rotate-0 awesome-marker awesome-marker-square",
+			prefix: "fa",
+			extraClasses: "fa-rotate-0 fa-sm",
 		});
     	marker.setIcon(icon);
 
