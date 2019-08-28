@@ -159,47 +159,14 @@ function addPoints(data) {
 			icon: data[row].Marker_Icon),
 			iconColor: "white",
 			markerColor: data[row].Color),
-			prefix: "ion",
+			prefix: "glyphicon",
 			// prefix: "glyphicon",
 			extraClasses: "fa-rotate-0"
+			iconSize: [38, 95], // size of the icon
 		});
     	marker.setIcon(icon);
 
   	}
-}
-
-// Point Marker Colors function
-// Returns different colors depending on the string passed
-function getColor(Hue) {
-	switch (Hue) {
-		case "New Bridge":
-			return "#FFC300";
-		case "Roundabout":
-			return "#8E44AD";
-		case "Signalization":
-			return "#E74C3C";
-		case "Turn Lane":
-			return "#1ABC9C";
-		default:
-			return "black";
-	}
-}
-
-// Point Marker Icons function
-// Returns different icons depending on the string passed
-function getIcon(Type) {
-	switch (Type) {
-		case "New Bridge":
-			return "star";
-		case "Roundabout":
-			return "sync-alt";
-		case "Signalization":
-			return "traffic-light";
-		case "Turn Lane":
-			return "directions";
-		default:
-			return "info-sign";
-	}
 }
 
 // Set style for parish boundary and municipalities layer
