@@ -161,7 +161,7 @@ function addPoints(data) {
 			markerColor: (data[row].Color),
 			prefix: "glyphicon",
 			// prefix: "glyphicon",
-			extraClasses: "fa-rotate-0"
+			extraClasses: "fa-rotate-0",
 			iconSize: [38, 95], // size of the icon
 		});
     	marker.setIcon(icon);
