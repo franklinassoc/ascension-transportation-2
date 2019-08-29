@@ -1,28 +1,17 @@
 
 /*
 * Script to display two tables from Google Sheets as point and polygon layers using Leaflet
-* Starts by importing JSONs representing the data to provide faster loading (and in case Google changes their API)
 * The Sheets are then imported using Tabletop.js and overwrite the initially laded layers
 */
-
-// This  getJSON call loads the localy stored polyline JSON and call the appropriate functions
-// $.getJSON("data-sources/US-states-leaflet.json", function(json) {
-//     addPolygons(json);
-// });
-// the points JSON wasn't provided in the repository, so it must be pulled from author's website
-// $.getJSON("data-sources/US-points.json", function(json) {
-//     addPoints(json);
-// });
-
 
 // init() is called as soon as the page loads
 function init() {
 
-	// these URLs come from Google Sheets "shareable link" form
-	// the first is the polygon layer and the second the points
+	// These URLs come from Google Sheets "shareable link" form.
+	// The first is the polygon layer and the second the points.
 	// linesURL points to "MoveAscension_Polys" where lines are in "geometry" field as JSON
 	var linesURL = "https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing";
-	// pointsURL points to "MoveAscension_Points"
+	// pointsURL points to "MoveAscension_Points" where longitude and latitude fields are provided.
 	var pointsURL = "https://docs.google.com/spreadsheets/d/169Y5VHM_RvdzG6_Zaq-nBkm8WXBWOWmwt6HC41PlzAc/edit?usp=sharing";
 
     Tabletop.init( { key: pointsURL,
@@ -41,7 +30,7 @@ var map = L.map("map").setView([30.2, -90.0], 8);
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 	subdomains: "abcd",
-	maxZoom: 19
+	maxZoom: 14
 });
 basemap.addTo(map);
 
@@ -89,7 +78,7 @@ function addPolygons(data) {
   	};
 
   	for (var row in data) {
-  		// The Sheets data has a column "include" that specifies if that row should be mapped
+  		// The Sheets data has a column named "include" that specifies if that row should be mapped
     	if (data[row].include == "y") {
       		var coords = JSON.parse(data[row].geometry);
 
@@ -154,13 +143,15 @@ function addPoints(data) {
       	marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title+"<br>"+data[row].Comments);
 
       	// AwesomeMarkers is used to create fancier icons
-		// documentation https://github.com/FortAwesome/Font-Awesome/blob/master/css/fontawesome.css
+		// documentation FA 5.x https://github.com/FortAwesome/Font-Awesome/blob/master/css/fontawesome.css
+		// 4.6.3 icons https://lab.artlung.com/font-awesome-sample/
       	var icon = L.AwesomeMarkers.icon({
 			icon: (data[row].Marker_Icon),
 			iconColor: "white",
 			markerColor: (data[row].Color),
 			prefix: "fa",
-			extraClasses: "fa-rotate-0 fa-sm",
+			extraClasses: "fa-flip-horizontal fa-sm",
+			iconSize: [16,16]
 		});
     	marker.setIcon(icon);
 
