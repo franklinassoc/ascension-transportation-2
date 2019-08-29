@@ -150,7 +150,8 @@ function addPoints(data) {
 			iconColor: "white",
 			markerColor: (data[row].Color),
 			prefix: "fa",
-			extraClasses: "flip-horizontal"
+			extraClasses: "flip-horizontal sm"
+			// omit prefix from the css class item
 		});
     	marker.setIcon(icon);
 
