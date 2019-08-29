@@ -148,16 +148,18 @@ function addPoints(data) {
       	var icon = L.AwesomeMarkers.icon({
 			icon: (data[row].Marker_Icon),
 			iconColor: "white",
+			iconSize: [20, 28],
+            iconAnchor: [10, 14], //half of width x height
 			markerColor: (data[row].Color),
 			prefix: "fa",
-			extraClasses: "flip-horizontal sm"
+			extraClasses: "flip-horizontal"
 			// omit prefix from the css class item
 		});
     	marker.setIcon(icon);
 
   	}
 }
-
+		
 // Set style for parish boundary and municipalities layer
   	var pboundsStyle = {"color": "#273746", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
 
