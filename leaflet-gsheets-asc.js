@@ -24,7 +24,7 @@ function init() {
 window.addEventListener("DOMContentLoaded", init);
 
 // Create a new Leaflet map centered on Ascension Parish
-var map = L.map("map").setView([30.2, -90.0], 12);
+var map = L.map("map").setView([30.26, -90.93], 10);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
