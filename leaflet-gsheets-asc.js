@@ -30,7 +30,7 @@ var map = L.map("map").setView([30.2, -90.0], 8);
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 	subdomains: "abcd",
-	maxZoom: 14
+	maxZoom: 20
 });
 basemap.addTo(map);
 
@@ -99,7 +99,7 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-  	var polygonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 1.5};
+  	var polygonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 2};
 	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 4};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
