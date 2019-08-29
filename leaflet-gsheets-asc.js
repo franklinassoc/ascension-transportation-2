@@ -92,7 +92,7 @@ function addPolygons(data) {
 	          		"Title": data[row].Title,
 	          		"type": data[row].Type,
 					"file_num": data[row].file_num,
-					"myinfo": data[row].myinfo,
+					"myinfo": data[row].myinfo
 	        	}
 	    	});
     	}
@@ -154,7 +154,6 @@ function addPoints(data) {
 			// omit prefix from the css class item
 		});
     	marker.setIcon(icon);
-
   	}
 }
 		
