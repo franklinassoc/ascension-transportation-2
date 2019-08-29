@@ -23,8 +23,8 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
-// Create a new Leaflet map centered on Ascension Parish 8
-var map = L.map("map").setView([30.2, -90.0], 5);
+// Create a new Leaflet map centered on Ascension Parish
+var map = L.map("map").setView([30.2, -90.0], 12);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png", {
@@ -150,8 +150,8 @@ function addPoints(data) {
 			iconColor: "white",
 			markerColor: (data[row].Color),
 			prefix: "fa",
-			extraClasses: "flip-horizontal"
-			// omit prefix from the css class item
+			extraClasses: "fa-flip-horizontal"
+			// omit prefix from the css class item?
 		});
     	marker.setIcon(icon);
   	}
