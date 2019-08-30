@@ -1,7 +1,7 @@
 
 /*
 * Script to display two tables from Google Sheets as point and polygon layers using Leaflet
-* The Sheets are then imported using Tabletop.js and overwrite the initially laded layers
+* The Sheets are then imported using Tabletop.js 
 */
 
 // init() is called as soon as the page loads
@@ -23,7 +23,7 @@ function init() {
 }
 window.addEventListener("DOMContentLoaded", init);
 
-// Create a new Leaflet map centered on Ascension Parish
+// Create a new Leaflet map centered on Ascension Parish, Louisiana
 var map = L.map("map").setView([30.26, -90.91], 11);
 
 // This is the Carto Positron basemap
@@ -34,6 +34,7 @@ var basemap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/li
 });
 basemap.addTo(map);
 
+// Define the sidebar data display panel
 var sidebar = L.control.sidebar({
 	container: 'sidebar',
 	closeButton: false,
@@ -52,8 +53,8 @@ sidebar.addPanel(panelContent);
 
 map.on('click', function (feature, layer) {
 	sidebar.close(panelID);
-	//$('#sidebar-title').text("No item selected");
-	//$('#sidebar-content').text("");
+	$('#sidebar-title').text("No item selected");
+	$('#sidebar-content').text("");
 });
 
 // These are declared outisde the functions so that the functions can check if they already exist
@@ -159,6 +160,7 @@ function addPoints(data) {
 
 // need to display marker data on sidebar rather than popup.
 // https://stackoverflow.com/questions/41322108/dynamic-content-in-sidebar-in-leaflet
+// https://gis.stackexchange.com/questions/201987/leaflet-sidebar-set-content-depending-on-clicked-geojson-feature
 	
 // Set style for parish boundary and municipalities layer
   	var pboundsStyle = {"color": "#273746", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
