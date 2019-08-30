@@ -99,8 +99,8 @@ function addPolygons(data) {
   	}
 
   	// The polygons are styled slightly differently on mouse hovers
-  	var polygonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 2};
-	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 4};
+  	var polygonStyle = {"color": "#2ca25f", "fillColor": "#99d8c9", "weight": 4};
+	var polygonHoverStyle = {"color": "green", "fillColor": "#2ca25f", "weight": 8};
 	
   	polygonLayer = L.geoJSON(geojsonPolys, {
     	onEachFeature: function (feature, layer) {
@@ -156,7 +156,10 @@ function addPoints(data) {
     	marker.setIcon(icon);
   	}
 }
-		
+
+// need to display marker data on sidebar rather than popup.
+// https://stackoverflow.com/questions/41322108/dynamic-content-in-sidebar-in-leaflet
+	
 // Set style for parish boundary and municipalities layer
   	var pboundsStyle = {"color": "#273746", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
 
