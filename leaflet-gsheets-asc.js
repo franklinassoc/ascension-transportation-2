@@ -147,15 +147,15 @@ function addPoints(data) {
 	    // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
 		marker.feature = {
 		properties: {
-        location: data[row].location,
-        category: data[row].category
+        title: data[row].Title,
+        comments: data[row].Comments
 		}
 		};
 		marker.on({
 		click: function(e) {
         L.DomEvent.stopPropagation(e);
-        $('#sidebar-title').text(e.target.feature.properties.location);
-        $('#sidebar-content').text(e.target.feature.properties.category);
+        $('#sidebar-title').text(e.target.feature.properties.title);
+        $('#sidebar-content').text(e.target.feature.properties.comments);
         sidebar.open(panelID);
 		}
 		});	
