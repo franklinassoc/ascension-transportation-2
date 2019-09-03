@@ -37,7 +37,7 @@ basemap.addTo(map);
 // Define the sidebar data display panel
 var sidebar = L.control.sidebar({
 	container: 'sidebar',
-	closeButton: false,
+	closeButton: true, //changed to true so it would work on mobile.
 	position: 'right'
 }).addTo(map);
 
