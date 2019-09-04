@@ -87,6 +87,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  right: 40px;
   background-color: rgba(255, 255, 255, 0.95);
   overflow-x: scroll;
   overflow-y: auto; }
@@ -95,7 +96,7 @@
     right: 0; }
   .leaflet-sidebar-right .leaflet-sidebar-content {
     left: 0;
-    right: 80px; }
+    right: 40px; }
   .leaflet-sidebar.collapsed > .leaflet-sidebar-content {
     overflow-y: hidden; }
 
