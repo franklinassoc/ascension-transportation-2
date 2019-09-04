@@ -3,7 +3,7 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  overflow: hidden;
+  overflow: inherit;
   z-index: 2000; }
   .leaflet-sidebar.collapsed {
     width: 40px; }
@@ -64,7 +64,7 @@
         background-color: #eee; }
       .leaflet-sidebar-tabs > li.active, .leaflet-sidebar-tabs > ul > li.active {
         color: #fff;
-        background-color: #FE5200; }
+        background-color: #FE5200; } /* custom color */
       .leaflet-sidebar-tabs > li.disabled, .leaflet-sidebar-tabs > ul > li.disabled {
         color: rgba(51, 51, 51, 0.4); }
         .leaflet-sidebar-tabs > li.disabled:hover, .leaflet-sidebar-tabs > ul > li.disabled:hover {
@@ -128,7 +128,7 @@
   line-height: 40px;
   font-size: 14.4pt;
   color: #fff;
-  background-color: #FE5200; }
+  background-color: #FE5200; } /* custom color */
   .leaflet-sidebar-right .leaflet-sidebar-header {
     padding-left: 40px; }
 
@@ -182,18 +182,15 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-    /* right: 315px; } */
-	right: 300px; } }
+	right: 315px; } }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-    /* right: 400px; } */
-	right: 350px; } }
+	right: 400px; } }
 
 @media (min-width: 1200px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-    /* right: 470px; } */
-	right: 450px; } }
+	right: 470px; } }
 
 @media (min-width: 768px) {
   .leaflet-sidebar-right.collapsed ~ .leaflet-control-container .leaflet-right {
