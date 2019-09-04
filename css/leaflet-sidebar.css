@@ -91,11 +91,11 @@
   overflow-x: hidden;
   overflow-y: auto; }
   .leaflet-sidebar-left .leaflet-sidebar-content {
-    left: 10px;
+    left: 40px;
     right: 0; }
   .leaflet-sidebar-right .leaflet-sidebar-content {
     left: 0;
-    right: 60px; }
+    right: 40px; }
   .leaflet-sidebar.collapsed > .leaflet-sidebar-content {
     overflow-y: hidden; }
 
