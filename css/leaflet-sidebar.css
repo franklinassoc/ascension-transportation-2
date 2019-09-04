@@ -95,7 +95,7 @@
     right: 0; }
   .leaflet-sidebar-right .leaflet-sidebar-content {
     left: 0;
-    right: 40px; }
+    right: 80px; }
   .leaflet-sidebar.collapsed > .leaflet-sidebar-content {
     overflow-y: hidden; }
 
