@@ -88,14 +88,14 @@
   top: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.95);
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: auto; }
   .leaflet-sidebar-left .leaflet-sidebar-content {
     left: 40px;
     right: 0; }
   .leaflet-sidebar-right .leaflet-sidebar-content {
     left: 0;
-    right: 40px; }
+    right: 80px; }
   .leaflet-sidebar.collapsed > .leaflet-sidebar-content {
     overflow-y: hidden; }
 
