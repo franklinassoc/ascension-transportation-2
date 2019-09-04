@@ -121,10 +121,10 @@ function addPolygons(data) {
                     // https://stackoverflow.com/questions/35466139/map-on-click-fires-when-geojson-is-clicked-on-leaflet-1-0
                     L.DomEvent.stopPropagation(e); 
 
-                	// $('#sidebar-title').text(e.target.feature.properties.type);
-					// $('#sidebar-content').text(e.target.feature.properties.myinfo);
-					document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
-					document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.myinfo;					
+                	$('#sidebar-title').text(e.target.feature.properties.type);
+					$('#sidebar-content').text(e.target.feature.properties.myinfo);
+					// document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
+					// document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.myinfo;					
 					sidebar.open(panelID);
                 }
       		});
@@ -156,10 +156,10 @@ function addPoints(data) {
 		marker.on({
 		click: function(e) {
         L.DomEvent.stopPropagation(e);
-        // $('#sidebar-title').text(e.target.feature.properties.title);
-        // $('#sidebar-content').text(e.target.feature.properties.comments);
-        document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.title;
-        document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.comments;		
+        $('#sidebar-title').text(e.target.feature.properties.title);
+        $('#sidebar-content').text(e.target.feature.properties.comments);
+        // document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.title;
+        // document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.comments;		
         sidebar.open(panelID);
 		}
 		});	
