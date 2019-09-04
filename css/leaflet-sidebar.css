@@ -11,7 +11,6 @@
     .leaflet-sidebar {
       top: 10px;
       bottom: 10px;
-	  right: 10px; /* added */
       transition: width 500ms; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .leaflet-sidebar {
@@ -24,7 +23,8 @@
   @media (min-width: 1200px) {
     .leaflet-sidebar {
       width: 400px;
-      max-width: 460px; } }
+      right: 10px; /* added */
+	  max-width: 460px; } }
 
 .leaflet-sidebar-left {
   left: 0; }
