@@ -90,10 +90,10 @@ function addPolygons(data) {
 	          		"coordinates": coords
 	        	},
 	        	"properties": {
-	          		"Title": data[row].Title,
+	          		"title": data[row].Title,
 	          		"type": data[row].Type,
 					"file_num": data[row].file_num,
-					"myinfo": data[row].myinfo
+					"sidepanel_text": data[row].sidepanel_text
 	        	}
 	    	});
     	}
@@ -122,9 +122,9 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#sidebar-content').text(e.target.feature.properties.myinfo);
+					$('#sidebar-content').text(e.target.feature.properties.sidepanel_text);
 					// document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
-					// document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.myinfo;					
+					// document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;					
 					sidebar.open(panelID);
                 }
       		});
@@ -144,22 +144,23 @@ function addPoints(data) {
 	for(var row = 0; row < data.length; row++) {
     	var marker = L.marker([data[row].lat, data[row].long]).addTo(pointGroupLayer);
 		// UNCOMMENT THIS LINE TO USE POPUPS
-      	// marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title+"<br>"+data[row].Comments);
+      	// marker.bindPopup("<h2>"+data[row].Type+"</h2><br>"+data[row].Title+"<br>"+data[row].sidepanel_text);
 
 	    // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
 		marker.feature = {
 		properties: {
         title: data[row].Title,
-        comments: data[row].Comments
+		type: data[row].Type
+        sidepanel_text: data[row].sidepanel_text
 		}
 		};
 		marker.on({
 		click: function(e) {
         L.DomEvent.stopPropagation(e);
-        $('#sidebar-title').text(e.target.feature.properties.title);
-        $('#sidebar-content').text(e.target.feature.properties.comments);
-        // document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.title;
-        // document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.comments;		
+        $('#sidebar-title').text(e.target.feature.properties.type);
+        $('#sidebar-content').text(e.target.feature.properties.sidepanel_text);
+        // document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
+        // document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;		
         sidebar.open(panelID);
 		}
 		});	
