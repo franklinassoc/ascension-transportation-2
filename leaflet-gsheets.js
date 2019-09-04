@@ -150,7 +150,7 @@ function addPoints(data) {
 		marker.feature = {
 		properties: {
         title: data[row].Title,
-		type: data[row].Type
+		type: data[row].Type,
         sidepanel_text: data[row].sidepanel_text
 		}
 		};
