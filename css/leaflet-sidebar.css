@@ -87,7 +87,6 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 50px;
   background-color: rgba(255, 255, 255, 0.95);
   overflow-x: hidden;
   overflow-y: auto; }
@@ -96,7 +95,7 @@
     right: 0; }
   .leaflet-sidebar-right .leaflet-sidebar-content {
     left: 0;
-    right: 40px; }
+    right: 50px; }
   .leaflet-sidebar.collapsed > .leaflet-sidebar-content {
     overflow-y: hidden; }
 
@@ -108,7 +107,7 @@
   left: 0;
   right: 0;
   box-sizing: border-box;
-  padding: 10px 20px; }
+  padding: 10px 40px; }
   .leaflet-sidebar-pane.active {
     display: block; }
   @media (min-width: 768px) and (max-width: 991px) {
