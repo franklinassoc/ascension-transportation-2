@@ -173,17 +173,12 @@ function addPoints(data) {
 			iconColor: "white",
 			markerColor: (data[row].Color),
 			prefix: "fa",
-			extraClasses: "flip-horizontal"
-			// omit prefix from the css class item?
+			extraClasses: "flip-horizontal" // omit prefix from the css class item?
 		});
     	marker.setIcon(icon);
   	}
 }
 
-// need to display marker data on sidebar rather than popup.
-// https://stackoverflow.com/questions/41322108/dynamic-content-in-sidebar-in-leaflet
-// https://gis.stackexchange.com/questions/201987/leaflet-sidebar-set-content-depending-on-clicked-geojson-feature
-	
 // Set style for parish boundary and municipalities layer
   	var pboundsStyle = {"color": "#273746", "fillColor": "#99d8c9", "weight": 1, "fillOpacity": 0};
 
