@@ -46,7 +46,7 @@ var panelContent = {
     id: panelID,                     // UID, used to access the panel
     tab: '<i class="fa fa-bars active"></i>',  // content can be passed as HTML string,
     title: '<h2 id="sidebar-title"> No item selected</h2>',              // large text "title" of the panel content
-    pane: '<p id="leaflet-sidebar-content"></p>',        // Content of the panel. DOM elements can be passed, too.
+    pane: '<p id="sidebar-content"></p>',        // Content of the panel. DOM elements can be passed, too.
     position: 'top'                  // optional vertical alignment, defaults to 'top'
 };
 sidebar.addPanel(panelContent);
@@ -54,7 +54,7 @@ sidebar.addPanel(panelContent);
 map.on('click', function (feature, layer) {
 	sidebar.close(panelID);
 	// $('#sidebar-title').text("No item selected");
-	// $('#leaflet-sidebar-content').text("");
+	// $('#sidebar-content').text("");
 });
 
 // These are declared outisde the functions so that the functions can check if they already exist
@@ -122,9 +122,9 @@ function addPolygons(data) {
                     L.DomEvent.stopPropagation(e); 
 
                 	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#leaflet-sidebar-content').text(e.target.feature.properties.sidepanel_text);
+					$('#sidebar-content').text(e.target.feature.properties.sidepanel_text);
 					// document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
-					// document.getElementById('leaflet-sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;					
+					// document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;					
 					sidebar.open(panelID);
                 }
       		});
@@ -158,9 +158,9 @@ function addPoints(data) {
 		click: function(e) {
         L.DomEvent.stopPropagation(e);
         $('#sidebar-title').text(e.target.feature.properties.type);
-        $('#leaflet-sidebar-content').text(e.target.feature.properties.sidepanel_text);
+        $('#sidebar-content').text(e.target.feature.properties.sidepanel_text);
         // document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
-        // document.getElementById('leaflet-sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;		
+        // document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;		
         sidebar.open(panelID);
 		}
 		});	
