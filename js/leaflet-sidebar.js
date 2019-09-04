@@ -315,7 +315,7 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
                 if (data.title)
                     content += '<h1 class="leaflet-sidebar-header">' + data.title;
                 if (this.options.closeButton)
-                    content += '<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>';
+                    content += '<span class="leaflet-sidebar-close"><i class="fa fa-times"></i></span>';
                 if (data.title)
                     content += '</h1>';
                 pane.innerHTML = content + data.pane;

@@ -37,7 +37,7 @@ basemap.addTo(map);
 // Define the sidebar data display panel
 var sidebar = L.control.sidebar({
 	container: 'sidebar',
-	closeButton: true, //changed to true so it would work on mobile.
+	closeButton: true,
 	position: 'right'
 }).addTo(map);
 
@@ -53,8 +53,8 @@ sidebar.addPanel(panelContent);
 
 map.on('click', function (feature, layer) {
 	sidebar.close(panelID);
-	$('#sidebar-title').text("No item selected");
-	$('#sidebar-content').text("");
+	// $('#sidebar-title').text("No item selected");
+	// $('#sidebar-content').text("");
 });
 
 // These are declared outisde the functions so that the functions can check if they already exist
@@ -121,8 +121,10 @@ function addPolygons(data) {
                     // https://stackoverflow.com/questions/35466139/map-on-click-fires-when-geojson-is-clicked-on-leaflet-1-0
                     L.DomEvent.stopPropagation(e); 
 
-                	$('#sidebar-title').text(e.target.feature.properties.type);
-					$('#sidebar-content').text(e.target.feature.properties.myinfo);
+                	// $('#sidebar-title').text(e.target.feature.properties.type);
+					// $('#sidebar-content').text(e.target.feature.properties.myinfo);
+					document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
+					document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.myinfo;					
 					sidebar.open(panelID);
                 }
       		});
@@ -154,8 +156,10 @@ function addPoints(data) {
 		marker.on({
 		click: function(e) {
         L.DomEvent.stopPropagation(e);
-        $('#sidebar-title').text(e.target.feature.properties.title);
-        $('#sidebar-content').text(e.target.feature.properties.comments);
+        // $('#sidebar-title').text(e.target.feature.properties.title);
+        // $('#sidebar-content').text(e.target.feature.properties.comments);
+        document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.title;
+        document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.comments;		
         sidebar.open(panelID);
 		}
 		});	
