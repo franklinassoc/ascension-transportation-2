@@ -11,7 +11,6 @@
     .leaflet-sidebar {
       top: 10px;
       bottom: 10px;
-	  right: 40px; /* added */
       transition: width 500ms; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .leaflet-sidebar {
@@ -24,8 +23,7 @@
   @media (min-width: 1200px) {
     .leaflet-sidebar {
       width: 400px;
-      right: 40px; /* added */
-	  max-width: 460px; } }
+	  max-width: 450px; } } /* was 460 */
 
 .leaflet-sidebar-left {
   left: 0; }
@@ -192,7 +190,7 @@
 
 @media (min-width: 1200px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-	right: 470px; } }
+	right: 450px; } }  /* was 470 */
 
 @media (min-width: 768px) {
   .leaflet-sidebar-right.collapsed ~ .leaflet-control-container .leaflet-right {
