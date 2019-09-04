@@ -38,7 +38,7 @@ basemap.addTo(map);
 var sidebar = L.control.sidebar({
 	container: 'sidebar',
 	closeButton: true,
-	position: 'left'
+	position: 'right'
 }).addTo(map);
 
 panelID = 'my-info-panel'
