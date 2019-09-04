@@ -38,7 +38,7 @@ basemap.addTo(map);
 var sidebar = L.control.sidebar({
 	container: 'sidebar',
 	closeButton: true,
-	position: 'right'
+	position: 'left'
 }).addTo(map);
 
 panelID = 'my-info-panel'
@@ -173,7 +173,7 @@ function addPoints(data) {
 			iconColor: "white",
 			markerColor: (data[row].Color),
 			prefix: "fa",
-			extraClasses: "flip-horizontal" // omit prefix from the css class item?
+			extraClasses: "fa-flip-horizontal" // omit prefix from the css class item?
 		});
     	marker.setIcon(icon);
   	}
