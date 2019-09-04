@@ -182,15 +182,18 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-    right: 315px; } }
+    /* right: 315px; } */
+	right: 300px; } }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-    right: 400px; } }
+    /* right: 400px; } */
+	right: 350px; } }
 
 @media (min-width: 1200px) {
   .leaflet-sidebar-right ~ .leaflet-control-container .leaflet-right {
-    right: 470px; } }
+    /* right: 470px; } */
+	right: 450px; } }
 
 @media (min-width: 768px) {
   .leaflet-sidebar-right.collapsed ~ .leaflet-control-container .leaflet-right {
