@@ -2,6 +2,7 @@
 /*
 * Script to display two tables from Google Sheets as point and polygon layers using Leaflet
 * The Sheets are then imported using Tabletop.js 
+* Based on work by Chris Arderne at https://github.com/carderne/leaflet-gsheets
 */
 
 // init() is called as soon as the page loads
