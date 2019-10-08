@@ -160,6 +160,7 @@ function addPoints(data) {
 		properties: {
         title: data[row].Title,
 		type: data[row].Type,
+		comments: data[row].Comments,
         sidepanel_text: data[row].sidepanel_text,
         sidepanel_text_2: data[row].sidepanel_text_2,
         sidepanel_text_3: data[row].sidepanel_text_3,
