@@ -96,7 +96,8 @@ function addPolygons(data) {
 					"file_num": data[row].file_num,
 					"sidepanel_text": data[row].sidepanel_text,
 					"sidepanel_text_2": data[row].sidepanel_text_2,
-					"sidepanel_text_3": data[row].sidepanel_text_3
+					"sidepanel_text_3": data[row].sidepanel_text_3,
+					"sidepanel_text_4": data[row].sidepanel_text_4
 	        	}
 	    	});
     	}
@@ -158,7 +159,8 @@ function addPoints(data) {
 		type: data[row].Type,
         sidepanel_text: data[row].sidepanel_text,
         sidepanel_text_2: data[row].sidepanel_text_2,
-        sidepanel_text_3: data[row].sidepanel_text_3
+        sidepanel_text_3: data[row].sidepanel_text_3,
+		sidepanel_text_4: data[row].sidepanel_text_4
 		}
 		};
 		marker.on({
@@ -168,6 +170,7 @@ function addPoints(data) {
         $('#sidebar-content').text(e.target.feature.properties.sidepanel_text);
         $('#sidebar-content2').text(e.target.feature.properties.sidepanel_text_2);
         $('#sidebar-content3').text(e.target.feature.properties.sidepanel_text_3);
+		$('#sidebar-content4').text(e.target.feature.properties.sidepanel_text_4);
         // document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
         // document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;		
         sidebar.open(panelID);
