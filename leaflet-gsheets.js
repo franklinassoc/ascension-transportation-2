@@ -11,10 +11,10 @@ function init() {
 	// These URLs come from Google Sheets "shareable link" form.
 	// The first is the polygon layer and the second the points.
 	// linesURL points to "MoveAscension_Polys" where lines are in "geometry" field as JSON
-	var linesURL = "https://drive.google.com/file/d/1B6OPzVQGghDM7TEk6MxQrAyEdNvZXjM8/view?usp=sharing";
+	var linesURL = "https://docs.google.com/spreadsheets/d/1gTlXe3_OoXgnJ4SZGXXz_V-PouTM7W7wevfkk7KN-18/edit?usp=sharing";
 	//https://docs.google.com/spreadsheets/d/1QHEnan-6W7T7fyXvFPTo0HQEQCwGldlcrGsSFdA5-JE/edit?usp=sharing
 	// pointsURL points to "MoveAscension_Points" where longitude and latitude fields are provided.
-	var pointsURL = "https://drive.google.com/file/d/10mw5whFftbWcx6T4ETYqlfanX_ZqTOhz/view?usp=sharing";
+	var pointsURL = "https://docs.google.com/spreadsheets/d/12UGa4cpLmLFqqGEBy9kmeRRohU77uBGSHS2M-NrW8xE/edit?usp=sharing";
 		//https://docs.google.com/spreadsheets/d/169Y5VHM_RvdzG6_Zaq-nBkm8WXBWOWmwt6HC41PlzAc/edit?usp=sharing
     Tabletop.init( { key: pointsURL,
                      callback: addPoints,
