@@ -47,7 +47,7 @@ var panelContent = {
     id: panelID,                     // UID, used to access the panel
     tab: '<i class="fa fa-bars active"></i>',  // content can be passed as HTML string,
     title: '<h2 id="sidebar-title"> No item selected</h2>',              // large text "title" of the panel content
-    pane: '<br><p id="sidebar-content"></p><br><p id="sidebar-content2"></p><br><p id="sidebar-content3"></p><br><p id="sidebar-content4"></p><br><p id="sidebar-comments"></p>',    // Content of the panel. DOM elements can be passed, too.
+    pane: '<br><p id="sidebar-content"></p><br><p id="image"></p><br><p id="sidebar-content2"></p><br><p id="sidebar-content3"></p><br><p id="sidebar-content4"></p><br><p id="sidebar-comments"></p>',    // Content of the panel. DOM elements can be passed, too.
     position: 'top'                  // optional vertical alignment, defaults to 'top'
 };
 sidebar.addPanel(panelContent);
@@ -95,6 +95,7 @@ function addPolygons(data) {
 	          		"type": data[row].Type,
 					"file_num": data[row].file_num,
 					"comments": data[row].Comments,
+					"image": data[row].image,
 					"sidepanel_text": data[row].sidepanel_text,
 					"sidepanel_text_2": data[row].sidepanel_text_2,
 					"sidepanel_text_3": data[row].sidepanel_text_3,
@@ -131,7 +132,8 @@ function addPolygons(data) {
 					$('#sidebar-content2').text(e.target.feature.properties.sidepanel_text_2);
 					$('#sidebar-content3').text(e.target.feature.properties.sidepanel_text_3);
 					$('#sidebar-content4').text(e.target.feature.properties.sidepanel_text_4);
-					$('#sidebar-comments').text(e.target.feature.properties.comments);					
+					$('#sidebar-comments').text(e.target.feature.properties.comments);
+					$('#image').text(e.target.feature.properties.image);
 					// document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.type;
 					// document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.sidepanel_text;					
 					sidebar.open(panelID);
@@ -162,6 +164,7 @@ function addPoints(data) {
 		type: data[row].Type,
 		comments: data[row].Comments,
         sidepanel_text: data[row].sidepanel_text,
+		image: data[row].image,
         sidepanel_text_2: data[row].sidepanel_text_2,
         sidepanel_text_3: data[row].sidepanel_text_3,
 		sidepanel_text_4: data[row].sidepanel_text_4
@@ -172,6 +175,7 @@ function addPoints(data) {
         L.DomEvent.stopPropagation(e);
         $('#sidebar-title').text(e.target.feature.properties.type);
         $('#sidebar-content').text(e.target.feature.properties.sidepanel_text);
+        $('#image').text(e.target.feature.properties.image);		
         $('#sidebar-content2').text(e.target.feature.properties.sidepanel_text_2);
         $('#sidebar-content3').text(e.target.feature.properties.sidepanel_text_3);
 		$('#sidebar-content4').text(e.target.feature.properties.sidepanel_text_4);
