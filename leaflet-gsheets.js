@@ -170,7 +170,7 @@ function addPoints(data) {
         sidepanel_text_2: data[row].sidepanel_text_2,
         sidepanel_text_3: data[row].sidepanel_text_3,
 		sidepanel_text_4: data[row].sidepanel_text_4,
-		"sidepanel_more_url": data[row].sidepanel_more_url
+		sidepanel_more_url: data[row].sidepanel_more_url
 		}
 		};
 		marker.on({
