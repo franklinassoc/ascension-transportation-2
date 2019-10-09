@@ -47,7 +47,7 @@ var panelContent = {
     id: panelID,                     // UID, used to access the panel
     tab: '<i class="fa fa-bars active"></i>',  // content can be passed as HTML string,
     title: '<h2 id="sidebar-title"> No item selected</h2>',              // large text "title" of the panel content
-    pane: '<br><p id="sidebar-content"></p><br><img id="myimage" src="default.jpg"><br><p id="sidebar-content2"></p><br><p id="sidebar-content3"></p><br><p id="sidebar-content4"></p><br><p id="sidebar-comments"></p>',    // Content of the panel. DOM elements can be passed, too.
+    pane: '<br><p id="sidebar-content"></p><br><img id="myimage" src="default.jpg"/><br><br><p id="sidebar-content2"></p><br><p id="sidebar-content3"></p><br><p id="sidebar-content4"></p><br><p id="sidebar-comments"></p>',    // Content of the panel. DOM elements can be passed, too.
     position: 'top'                  // optional vertical alignment, defaults to 'top'
 };
 sidebar.addPanel(panelContent);
